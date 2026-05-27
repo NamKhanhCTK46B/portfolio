@@ -223,7 +223,7 @@ export default function HomePage() {
             <div className="mt-8 space-y-4 text-slate-200">
               <p><span className="text-slate-400">Email:</span> khanh51024@gmail.com</p>
               <p><span className="text-slate-400">Điện thoại:</span> 0328405706</p>
-              <p><span className="text-slate-400">Địa chỉ:</span> 42/6 Chi Lăng, Phường Lâm Viên, TP.Đà Lạt, Tỉnh Lâm Đồng</p>
+              <p><span className="text-slate-400">Địa chỉ:</span> TP. Đà Lạt, Lâm Đồng</p>
             </div>
           </div>
 

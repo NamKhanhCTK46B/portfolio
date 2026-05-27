@@ -38,10 +38,11 @@ npm run start
 Dự án deploy qua GitHub push. Trên Vercel chọn preset Next.js:
 
 ```text
-Root Directory: portfolio
+Root Directory: ./
+Framework Preset: Next.js
 Build Command: npm run build
 Install Command: npm install
-Output Directory: .next
+Output Directory: để trống (Next.js default)
 ```
 
 Hiện tại portfolio tạm bỏ Supabase, không cần cấu hình biến môi trường.

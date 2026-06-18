@@ -1,15 +1,73 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
+  color-scheme: dark;
   --bg-dark: #030712;
   --bg-card: rgba(15, 23, 42, 0.6);
+  --bg-profile: rgba(3, 7, 18, 0.92);
+  --text-primary: #f1f5f9;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --text-footer: #475569;
   --accent-cyan: #06b6d4;
   --accent-violet: #8b5cf6;
   --accent-fuchsia: #d946ef;
   --accent-blue: #3b82f6;
   --glass-border: rgba(148, 163, 184, 0.12);
   --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-shadow: rgba(0, 0, 0, 0.2);
+  --profile-avatar-border: rgba(139, 92, 246, 0.3);
+  --button-secondary-border: rgba(148, 163, 184, 0.2);
+  --form-border: rgba(148, 163, 184, 0.15);
+  --form-bg: rgba(255, 255, 255, 0.04);
+  --form-bg-focus: rgba(255, 255, 255, 0.06);
+  --nav-border: rgba(148, 163, 184, 0.08);
+  --goal-bg: rgba(139, 92, 246, 0.05);
+  --goal-border: rgba(139, 92, 246, 0.2);
+  --hero-pill-bg: rgba(139, 92, 246, 0.1);
+  --hero-pill-border: rgba(139, 92, 246, 0.3);
+  --skill-bg: rgba(139, 92, 246, 0.08);
+  --skill-bg-hover: rgba(139, 92, 246, 0.18);
+  --skill-text: #c4b5fd;
+  --skill-text-hover: #e0d5fc;
+  --tag-bg: rgba(6, 182, 212, 0.08);
+  --tag-bg-hover: rgba(6, 182, 212, 0.12);
+  --tag-text: #67e8f9;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --bg-dark: #f8fafc;
+    --bg-card: rgba(255, 255, 255, 0.78);
+    --bg-profile: rgba(255, 255, 255, 0.9);
+    --text-primary: #0f172a;
+    --text-secondary: #1e293b;
+    --text-muted: #475569;
+    --text-subtle: #64748b;
+    --text-footer: #64748b;
+    --glass-border: rgba(15, 23, 42, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.68);
+    --glass-shadow: rgba(15, 23, 42, 0.08);
+    --profile-avatar-border: rgba(124, 58, 237, 0.24);
+    --button-secondary-border: rgba(15, 23, 42, 0.14);
+    --form-border: rgba(15, 23, 42, 0.14);
+    --form-bg: rgba(255, 255, 255, 0.76);
+    --form-bg-focus: rgba(255, 255, 255, 0.95);
+    --nav-border: rgba(15, 23, 42, 0.1);
+    --goal-bg: rgba(124, 58, 237, 0.07);
+    --goal-border: rgba(124, 58, 237, 0.18);
+    --hero-pill-bg: rgba(124, 58, 237, 0.08);
+    --hero-pill-border: rgba(124, 58, 237, 0.22);
+    --skill-bg: rgba(124, 58, 237, 0.08);
+    --skill-bg-hover: rgba(124, 58, 237, 0.14);
+    --skill-text: #6d28d9;
+    --skill-text-hover: #5b21b6;
+    --tag-bg: rgba(8, 145, 178, 0.08);
+    --tag-bg-hover: rgba(8, 145, 178, 0.13);
+    --tag-text: #0e7490;
+  }
 }
 
 * {
@@ -23,7 +81,7 @@ html {
 body {
   margin: 0;
   background: var(--bg-dark);
-  color: #e2e8f0;
+  color: var(--text-secondary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -49,6 +107,12 @@ body {
   filter: blur(100px);
   opacity: 0.25;
   animation: orbFloat 20s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: light) {
+  .bg-orbs .orb {
+    opacity: 0.16;
+  }
 }
 
 .bg-orbs .orb-1 {
@@ -118,7 +182,7 @@ body {
   border: 1px solid var(--glass-border);
   background: var(--glass-bg);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 8px 32px var(--glass-shadow),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -153,8 +217,8 @@ body {
 /* ── Skill badge ── */
 .skill-badge {
   border: 1px solid rgba(139, 92, 246, 0.2);
-  background: rgba(139, 92, 246, 0.08);
-  color: #c4b5fd;
+  background: var(--skill-bg);
+  color: var(--skill-text);
   border-radius: 9999px;
   padding: 8px 18px;
   font-size: 0.875rem;
@@ -163,9 +227,9 @@ body {
 }
 
 .skill-badge:hover {
-  background: rgba(139, 92, 246, 0.18);
+  background: var(--skill-bg-hover);
   border-color: rgba(139, 92, 246, 0.4);
-  color: #e0d5fc;
+  color: var(--skill-text-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
 }
@@ -212,8 +276,8 @@ body {
 /* ── Tag chips ── */
 .tag-chip {
   border: 1px solid rgba(6, 182, 212, 0.2);
-  background: rgba(6, 182, 212, 0.08);
-  color: #67e8f9;
+  background: var(--tag-bg);
+  color: var(--tag-text);
   border-radius: 9999px;
   padding: 4px 12px;
   font-size: 0.75rem;
@@ -223,7 +287,7 @@ body {
 
 .project-card:hover .tag-chip {
   border-color: rgba(6, 182, 212, 0.3);
-  background: rgba(6, 182, 212, 0.12);
+  background: var(--tag-bg-hover);
 }
 
 /* ── Metric card ── */
@@ -253,11 +317,11 @@ body {
 
 /* ── Form inputs ── */
 .form-input {
-  border: 1px solid rgba(148, 163, 184, 0.15);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--form-border);
+  background: var(--form-bg);
   border-radius: 1rem;
   padding: 14px 18px;
-  color: #e2e8f0;
+  color: var(--text-secondary);
   outline: none;
   font-family: inherit;
   font-size: 0.9375rem;
@@ -266,13 +330,13 @@ body {
 }
 
 .form-input::placeholder {
-  color: #64748b;
+  color: var(--text-subtle);
 }
 
 .form-input:focus {
   border-color: var(--accent-violet);
   box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--form-bg-focus);
 }
 
 /* ── Primary button ── */
@@ -319,9 +383,9 @@ body {
   padding: 14px 28px;
   font-weight: 600;
   font-size: 0.9375rem;
-  color: #e2e8f0;
+  color: var(--text-secondary);
   background: transparent;
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  border: 1px solid var(--button-secondary-border);
   cursor: pointer;
   transition: all 300ms ease;
   font-family: inherit;
@@ -336,7 +400,7 @@ body {
 
 /* ── Nav link ── */
 .nav-link {
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
@@ -357,7 +421,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #e2e8f0;
+  color: var(--text-secondary);
 }
 
 .nav-link:hover::after {
@@ -421,11 +485,11 @@ body {
 .shimmer-text {
   background: linear-gradient(
     90deg,
-    #e2e8f0 0%,
-    #06b6d4 25%,
-    #8b5cf6 50%,
-    #06b6d4 75%,
-    #e2e8f0 100%
+    var(--text-secondary) 0%,
+    var(--accent-cyan) 25%,
+    var(--accent-violet) 50%,
+    var(--accent-cyan) 75%,
+    var(--text-secondary) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;

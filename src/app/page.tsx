@@ -239,7 +239,7 @@ export default function HomePage() {
                 <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.25em", margin: 0 }}>
                   Portfolio
                 </p>
-                <p style={{ fontSize: "1.125rem", fontWeight: 600, color: "#e2e8f0", margin: "2px 0 0" }}>
+                <p style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--text-secondary)", margin: "2px 0 0" }}>
                   Nguyễn Hoàng Nam Khánh
                 </p>
               </div>
@@ -256,18 +256,18 @@ export default function HomePage() {
               <div className="flex flex-col gap-8">
                 <span
                   className="inline-flex self-start items-center rounded-full"
-                  style={{ border: "1px solid rgba(139,92,246,0.3)", background: "rgba(139,92,246,0.1)", padding: "0.5rem 1.25rem", fontSize: "0.875rem", fontWeight: 500, color: "#c4b5fd" }}
+                  style={{ border: "1px solid var(--hero-pill-border)", background: "var(--hero-pill-bg)", padding: "0.5rem 1.25rem", fontSize: "0.875rem", fontWeight: 500, color: "var(--skill-text)" }}
                 >
                   ✦ Sinh viên Kỹ thuật phần mềm đang tìm nơi thực tập
                 </span>
 
                 <div className="flex flex-col gap-5">
-                  <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.025em", color: "#f1f5f9", margin: 0 }}>
+                  <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.025em", color: "var(--text-primary)", margin: 0 }}>
                     Xây dựng trải nghiệm số{" "}
                     <span className="shimmer-text">hiện đại</span>,{" "}
                     dễ dùng và có thể triển khai thực tế.
                   </h1>
-                  <p style={{ maxWidth: "38rem", fontSize: "1.125rem", lineHeight: 1.8, color: "#94a3b8", margin: 0 }}>
+                  <p style={{ maxWidth: "38rem", fontSize: "1.125rem", lineHeight: 1.8, color: "var(--text-muted)", margin: 0 }}>
                     Tôi là Nguyễn Hoàng Nam Khánh, sinh viên Trường Đại học Đà Lạt chuyên ngành Kỹ thuật phần mềm.
                     Tôi tập trung phát triển ứng dụng web từ giao diện đến dữ liệu, luôn hướng đến sản phẩm thực tế và trải nghiệm người dùng.
                   </p>
@@ -282,18 +282,18 @@ export default function HomePage() {
               {/* Profile Card */}
               <div className="glass-card" style={{ borderRadius: "2rem", padding: "1.5rem" }}>
                 <div style={{ borderRadius: "1.75rem", padding: "2px", background: "linear-gradient(135deg, var(--accent-cyan), var(--accent-violet), var(--accent-fuchsia))" }}>
-                  <div style={{ borderRadius: "1.65rem", background: "rgba(3,7,18,0.92)", padding: "1.75rem" }}>
+                  <div style={{ borderRadius: "1.65rem", background: "var(--bg-profile)", padding: "1.75rem" }}>
                     <div className="flex items-center gap-5">
                       <img
                         src="/images/anh_dai_dien.jpg"
                         alt="Nguyễn Hoàng Nam Khánh"
                         className="rounded-2xl object-cover"
-                        style={{ width: "5.5rem", height: "5.5rem", border: "2px solid rgba(139,92,246,0.3)" }}
+                        style={{ width: "5.5rem", height: "5.5rem", border: "2px solid var(--profile-avatar-border)" }}
                       />
                       <div>
                         <p className="gradient-text" style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 600, margin: 0 }}>Profile</p>
-                        <h2 style={{ fontSize: "1.375rem", fontWeight: 700, color: "#f1f5f9", margin: "4px 0 0" }}>Nguyễn Hoàng Nam Khánh</h2>
-                        <p style={{ color: "#94a3b8", fontSize: "0.9375rem", margin: "4px 0 0" }}>Sinh viên KTPM</p>
+                        <h2 style={{ fontSize: "1.375rem", fontWeight: 700, color: "var(--text-primary)", margin: "4px 0 0" }}>Nguyễn Hoàng Nam Khánh</h2>
+                        <p style={{ color: "var(--text-muted)", fontSize: "0.9375rem", margin: "4px 0 0" }}>Sinh viên KTPM</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-3 gap-3 mt-7">
@@ -301,7 +301,7 @@ export default function HomePage() {
                         <div key={m.label} className="metric-card">
                           <div style={{ fontSize: "1.25rem", marginBottom: "0.25rem" }}>{m.icon}</div>
                           <div className="gradient-text" style={{ fontSize: "1.5rem", fontWeight: 800 }}>{m.value}</div>
-                          <div style={{ fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "#64748b", marginTop: "0.25rem" }}>{m.label}</div>
+                          <div style={{ fontSize: "0.6875rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--text-subtle)", marginTop: "0.25rem" }}>{m.label}</div>
                         </div>
                       ))}
                     </div>
@@ -318,18 +318,18 @@ export default function HomePage() {
           <div className="fade-up grid gap-8 lg:grid-cols-[1fr_0.72fr]">
             <div className="glass-card" style={{ borderRadius: "2rem", padding: "2.5rem" }}>
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Giới thiệu</p>
-              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "#f1f5f9", marginTop: "1rem" }}>
+              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "var(--text-primary)", marginTop: "1rem" }}>
                 Sẵn sàng cho kỳ thực tập đầu tiên của tôi.
               </h2>
-              <p style={{ maxWidth: "48rem", fontSize: "1rem", lineHeight: 2, color: "#94a3b8", marginTop: "1.25rem" }}>
+              <p style={{ maxWidth: "48rem", fontSize: "1rem", lineHeight: 2, color: "var(--text-muted)", marginTop: "1.25rem" }}>
                 Tôi quan tâm đến việc xây dựng giao diện sạch, có cấu trúc tốt, và học cách phối hợp giữa thiết kế, phát triển và yêu cầu nghiệp vụ.
                 Các dự án trong CV của tôi tập trung vào ứng dụng web thực tế như quản lý hoạt động rèn luyện, website dịch vụ và portfolio cá nhân.
               </p>
               <div className="grid gap-4 mt-8 sm:grid-cols-3">
                 {aboutCards.map((card) => (
                   <div key={card.label} className="metric-card" style={{ textAlign: "left" }}>
-                    <div style={{ fontSize: "0.8125rem", color: "#64748b" }}>{card.icon} {card.label}</div>
-                    <div style={{ fontSize: "1.0625rem", fontWeight: 600, color: "#e2e8f0", marginTop: "0.375rem" }}>{card.value}</div>
+                    <div style={{ fontSize: "0.8125rem", color: "var(--text-subtle)" }}>{card.icon} {card.label}</div>
+                    <div style={{ fontSize: "1.0625rem", fontWeight: 600, color: "var(--text-secondary)", marginTop: "0.375rem" }}>{card.value}</div>
                   </div>
                 ))}
               </div>
@@ -337,13 +337,13 @@ export default function HomePage() {
 
             <div
               className="glass-card"
-              style={{ borderRadius: "2rem", padding: "2.5rem", borderColor: "rgba(139,92,246,0.2)", background: "rgba(139,92,246,0.05)" }}
+              style={{ borderRadius: "2rem", padding: "2.5rem", borderColor: "var(--goal-border)", background: "var(--goal-bg)" }}
             >
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Mục tiêu</p>
-              <h3 style={{ fontSize: "1.375rem", fontWeight: 700, color: "#f1f5f9", marginTop: "1rem" }}>
+              <h3 style={{ fontSize: "1.375rem", fontWeight: 700, color: "var(--text-primary)", marginTop: "1rem" }}>
                 Tìm nơi thực tập phù hợp để học nhanh và đóng góp thật.
               </h3>
-              <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem", color: "#94a3b8", listStyle: "none", padding: 0, margin: "1.5rem 0 0" }}>
+              <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem", color: "var(--text-muted)", listStyle: "none", padding: 0, margin: "1.5rem 0 0" }}>
                 {[
                   { color: "var(--accent-cyan)", text: "Tập trung frontend với React/Next.js và hệ thống component rõ ràng." },
                   { color: "var(--accent-violet)", text: "Có thể làm việc với backend cơ bản, REST API và cơ sở dữ liệu như PostgreSQL/Firebase." },
@@ -366,10 +366,10 @@ export default function HomePage() {
           <div className="section-shell">
             <div className="fade-up" style={{ maxWidth: "40rem" }}>
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Kỹ năng</p>
-              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "#f1f5f9", marginTop: "1rem" }}>
+              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "var(--text-primary)", marginTop: "1rem" }}>
                 Kỹ năng được sắp theo hướng ứng tuyển thực tập.
               </h2>
-              <p style={{ fontSize: "1rem", lineHeight: 2, color: "#64748b", marginTop: "1rem" }}>
+              <p style={{ fontSize: "1rem", lineHeight: 2, color: "var(--text-subtle)", marginTop: "1rem" }}>
                 Nội dung kỹ năng được điều chỉnh để phù hợp với sinh viên đang tìm môi trường thực tập, ưu tiên khả năng làm web, làm việc với dữ liệu và phối hợp với team.
               </p>
             </div>
@@ -379,7 +379,7 @@ export default function HomePage() {
                 <article key={group.title} className="glass-card fade-up" style={{ borderRadius: "1.5rem", padding: "2rem" }}>
                   <div className="flex items-center gap-3">
                     <span style={{ fontSize: "1.5rem" }}>{group.icon}</span>
-                    <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#f1f5f9", margin: 0 }}>{group.title}</h3>
+                    <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>{group.title}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2.5 mt-6">
                     {group.items.map((item) => (
@@ -399,7 +399,7 @@ export default function HomePage() {
           <div className="section-shell">
             <div className="fade-up" style={{ maxWidth: "40rem" }}>
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Dự án</p>
-              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "#f1f5f9", marginTop: "1rem" }}>
+              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "var(--text-primary)", marginTop: "1rem" }}>
                 Bốn dự án tiêu biểu thể hiện khả năng học và triển khai.
               </h2>
             </div>
@@ -413,15 +413,15 @@ export default function HomePage() {
                       width: "3.5rem", height: "3.5rem", borderRadius: "1rem",
                       display: "flex", alignItems: "center", justifyContent: "center",
                       fontSize: "1.25rem", fontWeight: 700, color: "#fff",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
+                      boxShadow: "0 8px 24px var(--glass-shadow)",
                     }}
                   >
                     {project.title.slice(0, 1)}
                   </div>
-                  <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "#f1f5f9", marginTop: "1.25rem" }}>
+                  <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "var(--text-primary)", marginTop: "1.25rem" }}>
                     {project.title}
                   </h3>
-                  <p style={{ fontSize: "0.875rem", lineHeight: 1.8, color: "#94a3b8", marginTop: "0.75rem" }}>
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.8, color: "var(--text-muted)", marginTop: "0.75rem" }}>
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-5">
@@ -450,27 +450,27 @@ export default function HomePage() {
           <div className="section-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="fade-up">
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Liên hệ</p>
-              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "#f1f5f9", marginTop: "1rem" }}>
+              <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "var(--text-primary)", marginTop: "1rem" }}>
                 Sẵn sàng trao đổi cho cơ hội thực tập tiếp theo.
               </h2>
-              <p style={{ maxWidth: "32rem", fontSize: "1rem", lineHeight: 2, color: "#94a3b8", marginTop: "1rem" }}>
+              <p style={{ maxWidth: "32rem", fontSize: "1rem", lineHeight: 2, color: "var(--text-muted)", marginTop: "1rem" }}>
                 Nếu anh/chị đang tìm một thực tập sinh có tinh thần học hỏi, muốn làm việc với giao diện web, dữ liệu và quy trình nhóm, tôi rất sẵn sàng trao đổi.
               </p>
               <div className="flex flex-col gap-4 mt-8">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-center gap-3">
-                    <span style={{ color: "#64748b", fontSize: "0.9375rem" }}>{item.icon} {item.label}:</span>
+                    <span style={{ color: "var(--text-subtle)", fontSize: "0.9375rem" }}>{item.icon} {item.label}:</span>
                     {item.href ? (
                       <a
                         href={item.href}
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel="noreferrer"
-                        style={{ color: "#c4b5fd", fontWeight: 500, textDecoration: "none", transition: "color 300ms" }}
+                        style={{ color: "var(--skill-text)", fontWeight: 500, textDecoration: "none", transition: "color 300ms" }}
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span style={{ color: "#e2e8f0", fontWeight: 500 }}>{item.value}</span>
+                      <span style={{ color: "var(--text-secondary)", fontWeight: 500 }}>{item.value}</span>
                     )}
                   </div>
                 ))}
@@ -478,10 +478,10 @@ export default function HomePage() {
             </div>
 
             <div className="glass-card fade-up" style={{ borderRadius: "2rem", padding: "2rem" }}>
-              <h3 style={{ fontSize: "1.125rem", fontWeight: 600, color: "#e2e8f0", margin: "0 0 1.5rem" }}>Gửi tin nhắn cho tôi</h3>
+              <h3 style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--text-secondary)", margin: "0 0 1.5rem" }}>Gửi tin nhắn cho tôi</h3>
               <form onSubmit={handleSubmit} className="grid gap-4">
                 <div>
-                  <label htmlFor="contact-name" style={{ fontSize: "0.8125rem", color: "#64748b", marginBottom: "0.375rem", display: "block" }}>Họ và tên</label>
+                  <label htmlFor="contact-name" style={{ fontSize: "0.8125rem", color: "var(--text-subtle)", marginBottom: "0.375rem", display: "block" }}>Họ và tên</label>
                   <input
                     id="contact-name"
                     className="form-input"
@@ -491,7 +491,7 @@ export default function HomePage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" style={{ fontSize: "0.8125rem", color: "#64748b", marginBottom: "0.375rem", display: "block" }}>Email</label>
+                  <label htmlFor="contact-email" style={{ fontSize: "0.8125rem", color: "var(--text-subtle)", marginBottom: "0.375rem", display: "block" }}>Email</label>
                   <input
                     id="contact-email"
                     className="form-input"
@@ -502,7 +502,7 @@ export default function HomePage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="contact-message" style={{ fontSize: "0.8125rem", color: "#64748b", marginBottom: "0.375rem", display: "block" }}>Nội dung liên hệ</label>
+                  <label htmlFor="contact-message" style={{ fontSize: "0.8125rem", color: "var(--text-subtle)", marginBottom: "0.375rem", display: "block" }}>Nội dung liên hệ</label>
                   <textarea
                     id="contact-message"
                     className="form-input"
@@ -532,8 +532,8 @@ export default function HomePage() {
         </section>
 
         {/* ── Footer ── */}
-        <footer style={{ borderTop: "1px solid rgba(148,163,184,0.08)", padding: "2rem 0", textAlign: "center" }}>
-          <p style={{ fontSize: "0.8125rem", color: "#475569", margin: 0 }}>
+        <footer style={{ borderTop: "1px solid var(--nav-border)", padding: "2rem 0", textAlign: "center" }}>
+          <p style={{ fontSize: "0.8125rem", color: "var(--text-footer)", margin: 0 }}>
             © 2026 Nguyễn Hoàng Nam Khánh — Built with Next.js & ❤️
           </p>
         </footer>

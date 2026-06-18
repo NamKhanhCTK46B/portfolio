@@ -325,6 +325,7 @@ body {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 400ms ease;
+  pointer-events: none;
 }
 
 .project-card:hover::before {

@@ -231,15 +231,12 @@ export default function HomePage() {
         <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <div className="section-shell" style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
             {/* Nav */}
-            <header
-              className="glass-card"
-              style={{ borderRadius: "1.5rem", padding: "1rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}
-            >
-              <div>
+            <header className="glass-card site-header">
+              <div className="min-w-0">
                 <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.25em", margin: 0 }}>
                   Portfolio
                 </p>
-                <p style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--text-secondary)", margin: "2px 0 0" }}>
+                <p className="site-title" style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--text-secondary)", margin: "2px 0 0" }}>
                   Nguyễn Hoàng Nam Khánh
                 </p>
               </div>
@@ -252,51 +249,51 @@ export default function HomePage() {
             </header>
 
             {/* Hero grid */}
-            <div className="grid items-center gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
+            <div className="hero-grid grid items-center gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:py-20">
               <div className="flex flex-col gap-8">
                 <span
-                  className="inline-flex self-start items-center rounded-full"
+                  className="hero-pill inline-flex self-start items-center rounded-full"
                   style={{ border: "1px solid var(--hero-pill-border)", background: "var(--hero-pill-bg)", padding: "0.5rem 1.25rem", fontSize: "0.875rem", fontWeight: 500, color: "var(--skill-text)" }}
                 >
                   ✦ Sinh viên Kỹ thuật phần mềm đang tìm nơi thực tập
                 </span>
 
                 <div className="flex flex-col gap-5">
-                  <h1 style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.025em", color: "var(--text-primary)", margin: 0 }}>
+                  <h1 className="hero-title" style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.025em", color: "var(--text-primary)", margin: 0 }}>
                     Xây dựng trải nghiệm số{" "}
                     <span className="shimmer-text">hiện đại</span>,{" "}
                     dễ dùng và có thể triển khai thực tế.
                   </h1>
-                  <p style={{ maxWidth: "38rem", fontSize: "1.125rem", lineHeight: 1.8, color: "var(--text-muted)", margin: 0 }}>
+                  <p className="hero-copy" style={{ maxWidth: "38rem", fontSize: "1.125rem", lineHeight: 1.8, color: "var(--text-muted)", margin: 0 }}>
                     Tôi là Nguyễn Hoàng Nam Khánh, sinh viên Trường Đại học Đà Lạt chuyên ngành Kỹ thuật phần mềm.
                     Tôi tập trung phát triển ứng dụng web từ giao diện đến dữ liệu, luôn hướng đến sản phẩm thực tế và trải nghiệm người dùng.
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="action-row flex flex-wrap gap-4">
                   <a href="#projects" className="btn-primary" style={{ textDecoration: "none" }}>Xem dự án →</a>
                   <a href="https://github.com/NamKhanhCTK46B" target="_blank" rel="noreferrer" className="btn-secondary">GitHub ↗</a>
                 </div>
               </div>
 
               {/* Profile Card */}
-              <div className="glass-card" style={{ borderRadius: "2rem", padding: "1.5rem" }}>
+              <div className="glass-card profile-card">
                 <div style={{ borderRadius: "1.75rem", padding: "2px", background: "linear-gradient(135deg, var(--accent-cyan), var(--accent-violet), var(--accent-fuchsia))" }}>
-                  <div style={{ borderRadius: "1.65rem", background: "var(--bg-profile)", padding: "1.75rem" }}>
-                    <div className="flex items-center gap-5">
+                  <div className="profile-inner" style={{ borderRadius: "1.65rem", background: "var(--bg-profile)" }}>
+                    <div className="profile-summary flex items-center gap-5">
                       <img
                         src="/images/anh_dai_dien.jpg"
                         alt="Nguyễn Hoàng Nam Khánh"
                         className="rounded-2xl object-cover"
                         style={{ width: "5.5rem", height: "5.5rem", border: "2px solid var(--profile-avatar-border)" }}
                       />
-                      <div>
+                      <div className="min-w-0">
                         <p className="gradient-text" style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.2em", fontWeight: 600, margin: 0 }}>Profile</p>
-                        <h2 style={{ fontSize: "1.375rem", fontWeight: 700, color: "var(--text-primary)", margin: "4px 0 0" }}>Nguyễn Hoàng Nam Khánh</h2>
+                        <h2 className="profile-name" style={{ fontSize: "1.375rem", fontWeight: 700, color: "var(--text-primary)", margin: "4px 0 0" }}>Nguyễn Hoàng Nam Khánh</h2>
                         <p style={{ color: "var(--text-muted)", fontSize: "0.9375rem", margin: "4px 0 0" }}>Sinh viên KTPM</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-3 gap-3 mt-7">
+                    <div className="metrics-grid grid grid-cols-3 gap-3 mt-7">
                       {metrics.map((m) => (
                         <div key={m.label} className="metric-card">
                           <div style={{ fontSize: "1.25rem", marginBottom: "0.25rem" }}>{m.icon}</div>
@@ -316,7 +313,7 @@ export default function HomePage() {
         {/* ════════════ ABOUT ════════════ */}
         <section id="about" className="section-shell py-20 sm:py-24">
           <div className="fade-up grid gap-8 lg:grid-cols-[1fr_0.72fr]">
-            <div className="glass-card" style={{ borderRadius: "2rem", padding: "2.5rem" }}>
+            <div className="glass-card content-card">
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Giới thiệu</p>
               <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "var(--text-primary)", marginTop: "1rem" }}>
                 Sẵn sàng cho kỳ thực tập đầu tiên của tôi.
@@ -327,7 +324,7 @@ export default function HomePage() {
               </p>
               <div className="grid gap-4 mt-8 sm:grid-cols-3">
                 {aboutCards.map((card) => (
-                  <div key={card.label} className="metric-card" style={{ textAlign: "left" }}>
+                  <div key={card.label} className="metric-card info-card" style={{ textAlign: "left" }}>
                     <div style={{ fontSize: "0.8125rem", color: "var(--text-subtle)" }}>{card.icon} {card.label}</div>
                     <div style={{ fontSize: "1.0625rem", fontWeight: 600, color: "var(--text-secondary)", marginTop: "0.375rem" }}>{card.value}</div>
                   </div>
@@ -337,7 +334,7 @@ export default function HomePage() {
 
             <div
               className="glass-card"
-              style={{ borderRadius: "2rem", padding: "2.5rem", borderColor: "var(--goal-border)", background: "var(--goal-bg)" }}
+              style={{ borderRadius: "2rem", padding: "clamp(1.5rem, 5vw, 2.5rem)", borderColor: "var(--goal-border)", background: "var(--goal-bg)" }}
             >
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Mục tiêu</p>
               <h3 style={{ fontSize: "1.375rem", fontWeight: 700, color: "var(--text-primary)", marginTop: "1rem" }}>
@@ -376,7 +373,7 @@ export default function HomePage() {
 
             <div className="grid gap-6 mt-12 lg:grid-cols-3">
               {skillGroups.map((group) => (
-                <article key={group.title} className="glass-card fade-up" style={{ borderRadius: "1.5rem", padding: "2rem" }}>
+                <article key={group.title} className="glass-card skill-card fade-up">
                   <div className="flex items-center gap-3">
                     <span style={{ fontSize: "1.5rem" }}>{group.icon}</span>
                     <h3 style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--text-primary)", margin: 0 }}>{group.title}</h3>
@@ -429,7 +426,7 @@ export default function HomePage() {
                       <span key={tag} className="tag-chip">{tag}</span>
                     ))}
                   </div>
-                  <div className="flex gap-3 mt-6">
+                  <div className="project-actions flex gap-3 mt-6">
                     <a href={project.href} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: "0.625rem 1.25rem", fontSize: "0.8125rem", textDecoration: "none" }}>
                       Demo ↗
                     </a>
@@ -458,26 +455,27 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col gap-4 mt-8">
                 {contactInfo.map((item) => (
-                  <div key={item.label} className="flex items-center gap-3">
-                    <span style={{ color: "var(--text-subtle)", fontSize: "0.9375rem" }}>{item.icon} {item.label}:</span>
+                  <div key={item.label} className="contact-row flex items-center gap-3">
+                    <span className="contact-label" style={{ color: "var(--text-subtle)", fontSize: "0.9375rem" }}>{item.icon} {item.label}:</span>
                     {item.href ? (
                       <a
                         href={item.href}
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel="noreferrer"
+                        className="breakable-link"
                         style={{ color: "var(--skill-text)", fontWeight: 500, textDecoration: "none", transition: "color 300ms" }}
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span style={{ color: "var(--text-secondary)", fontWeight: 500 }}>{item.value}</span>
+                      <span className="breakable-link" style={{ color: "var(--text-secondary)", fontWeight: 500 }}>{item.value}</span>
                     )}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="glass-card fade-up" style={{ borderRadius: "2rem", padding: "2rem" }}>
+            <div className="glass-card form-card fade-up">
               <h3 style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--text-secondary)", margin: "0 0 1.5rem" }}>Gửi tin nhắn cho tôi</h3>
               <form onSubmit={handleSubmit} className="grid gap-4">
                 <div>

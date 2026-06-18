@@ -15,6 +15,14 @@ const skillGroups = [
 
 const projects = [
   {
+    title: "Lumio - Ứng dụng học tiếng Anh với AI",
+    description:
+      "Nền tảng học tiếng Anh hỗ trợ AI cho người học Việt Nam, có đăng nhập Google/Facebook/email, đăng ký tài khoản và khôi phục mật khẩu.",
+    tags: ["AI Learning", "English App", "Authentication", "Web App"],
+    href: "https://lumio.nguyenhoangnamkhanh.id.vn/",
+    repo: "https://github.com/NamKhanhCTK46B/lumio_app.git",
+  },
+  {
     title: "Website quản lý hoạt động rèn luyện sinh viên",
     description:
       "Dự án đồ án chuyên ngành và nghiên cứu khoa học về quản lý hoạt động rèn luyện, tập trung vào quy trình, dữ liệu và trải nghiệm người dùng.",
@@ -43,7 +51,7 @@ const projects = [
 const metrics = [
   { value: "3.37", label: "GPA" },
   { value: "985", label: "TOEIC" },
-  { value: "3", label: "Dự án" },
+  { value: "4", label: "Dự án" },
 ];
 
 export default function HomePage() {
@@ -73,19 +81,19 @@ export default function HomePage() {
               </span>
               <div className="space-y-5">
                 <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-7xl">
-                  Xây dựng trải nghiệm số rõ ràng, hiện đại và có thể triển khai thực tế.
+                  Xây dựng trải nghiệm số hiện đại, dễ dùng và có thể triển khai thực tế.
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
                   Tôi là Nguyễn Hoàng Nam Khánh, sinh viên Đại học Đà Lạt chuyên ngành Công nghệ phần mềm.
-                  Tôi đang tìm cơ hội thực tập để phát triển kỹ năng frontend, backend và làm việc cùng đội ngũ sản phẩm.
+                  Tôi tập trung phát triển ứng dụng web từ giao diện đến dữ liệu, trong đó có Lumio - nền tảng học tiếng Anh hỗ trợ AI.
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a href="#projects" className="inline-flex items-center justify-center rounded-2xl bg-blue-500 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-400">
                   Xem dự án
                 </a>
-                <a href="#contact" className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/10">
-                  Liên hệ
+                <a href="https://github.com/NamKhanhCTK46B" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/5 px-6 py-3 font-semibold text-white shadow-lg shadow-white/5 backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-white/10">
+                  GitHub
                 </a>
               </div>
             </div>
@@ -103,7 +111,7 @@ export default function HomePage() {
                   </div>
                   <div className="mt-8 grid grid-cols-3 gap-3">
                     {metrics.map((metric) => (
-                      <div key={metric.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+                      <div key={metric.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center shadow-[0_16px_40px_rgba(15,23,42,0.18)] transition hover:-translate-y-1 hover:border-blue-300/40 hover:bg-white/10">
                         <div className="text-2xl font-semibold text-white">{metric.value}</div>
                         <div className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">{metric.label}</div>
                       </div>
@@ -123,7 +131,7 @@ export default function HomePage() {
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Sẵn sàng cho kỳ thực tập đầu tiên của tôi.</h2>
             <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
               Tôi quan tâm đến việc xây dựng giao diện sạch, có cấu trúc tốt, và học cách phối hợp giữa thiết kế, phát triển và yêu cầu nghiệp vụ.
-              Trong môi trường thực tập, tôi muốn được tham gia vào những công việc có tính thực tế, từ đọc yêu cầu, xây dựng màn hình, đến hỗ trợ kiểm thử và cải thiện trải nghiệm người dùng.
+              Các dự án trong CV của tôi tập trung vào ứng dụng web thực tế như quản lý hoạt động rèn luyện, website dịch vụ, portfolio cá nhân và Lumio - ứng dụng học tiếng Anh với AI.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {[
@@ -181,29 +189,30 @@ export default function HomePage() {
       <section id="projects" className="section-shell py-20 sm:py-24">
         <div className="flex max-w-2xl flex-col gap-4">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-600">Dự án</p>
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Ba dự án tiêu biểu thể hiện khả năng học và triển khai.</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Bốn dự án tiêu biểu thể hiện khả năng học và triển khai.</h2>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.title} className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:shadow-[0_32px_100px_rgba(15,23,42,0.12)]">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-violet-600 text-xl font-semibold text-white">
+            <article key={project.title} className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-[0_34px_110px_rgba(37,99,235,0.16)]">
+              <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/60 to-transparent opacity-0 transition group-hover:opacity-100" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-violet-600 text-xl font-semibold text-white shadow-lg shadow-blue-500/25 transition duration-300 group-hover:scale-105 group-hover:shadow-violet-500/30">
                 {project.title.slice(0, 1)}
               </div>
-              <h3 className="mt-5 text-xl font-semibold text-slate-950">{project.title}</h3>
+              <h3 className="mt-5 text-xl font-semibold text-slate-950 transition group-hover:text-blue-700">{project.title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-600">{project.description}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
+                  <span key={tag} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 transition group-hover:border-blue-100 group-hover:bg-blue-50 group-hover:text-blue-700">
                     {tag}
                   </span>
                 ))}
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href={project.href} target="_blank" rel="noreferrer" className="rounded-2xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
+                <a href={project.href} target="_blank" rel="noreferrer" className="rounded-2xl bg-slate-950 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-950/10 transition hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-blue-500/20">
                   Demo
                 </a>
-                <a href={project.repo} target="_blank" rel="noreferrer" className="rounded-2xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50">
+                <a href={project.repo} target="_blank" rel="noreferrer" className="rounded-2xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700">
                   GitHub
                 </a>
               </div>
@@ -224,6 +233,12 @@ export default function HomePage() {
               <p><span className="text-slate-400">Email:</span> khanh51024@gmail.com</p>
               <p><span className="text-slate-400">Điện thoại:</span> 0328405706</p>
               <p><span className="text-slate-400">Địa chỉ:</span> TP. Đà Lạt, Lâm Đồng</p>
+              <p>
+                <span className="text-slate-400">GitHub:</span>{" "}
+                <a href="https://github.com/NamKhanhCTK46B" target="_blank" rel="noreferrer" className="font-medium text-blue-300 transition hover:text-blue-200">
+                  github.com/NamKhanhCTK46B
+                </a>
+              </p>
             </div>
           </div>
 

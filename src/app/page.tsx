@@ -404,19 +404,28 @@ export default function HomePage() {
             <div className="grid gap-6 mt-12 sm:grid-cols-2">
               {projects.map((project) => (
                 <article key={project.title} className="project-card fade-up">
-                  <div
-                    className={`bg-gradient-to-br ${project.gradient}`}
-                    style={{
-                      width: "3.5rem", height: "3.5rem", borderRadius: "1rem",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      fontSize: "1.25rem", fontWeight: 700, color: "#fff",
-                      boxShadow: "0 8px 24px var(--glass-shadow)",
-                    }}
-                  >
-                    {project.title.slice(0, 1)}
-                  </div>
-                  <h3 style={{ fontSize: "1.125rem", fontWeight: 700, color: "var(--text-primary)", marginTop: "1.25rem" }}>
-                    {project.title}
+                  <a href={project.href} target="_blank" rel="noreferrer" style={{ textDecoration: "none", display: "inline-block" }}>
+                    <div
+                      className={`bg-gradient-to-br ${project.gradient} project-icon`}
+                      style={{
+                        width: "3.5rem", height: "3.5rem", borderRadius: "1rem",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        fontSize: "1.25rem", fontWeight: 700, color: "#fff",
+                        boxShadow: "0 8px 24px var(--glass-shadow)",
+                      }}
+                    >
+                      {project.title.slice(0, 1)}
+                    </div>
+                  </a>
+                  <h3 style={{ fontSize: "1.125rem", fontWeight: 700, marginTop: "1.25rem" }}>
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-title-link"
+                    >
+                      {project.title}
+                    </a>
                   </h3>
                   <p style={{ fontSize: "0.875rem", lineHeight: 1.8, color: "var(--text-muted)", marginTop: "0.75rem" }}>
                     {project.description}

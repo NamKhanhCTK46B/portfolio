@@ -356,6 +356,24 @@ body {
   background: var(--tag-bg-hover);
 }
 
+.project-title-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+.project-card:hover .project-title-link {
+  color: var(--accent-cyan);
+}
+
+.project-icon {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-icon {
+  transform: scale(1.05);
+}
+
 /* ── Metric card ── */
 .metric-card {
   border: 1px solid var(--glass-border);

@@ -21,24 +21,68 @@ const skillGroups = [
   },
 ];
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  href: string;
+  primaryLabel: string;
+  repo?: string;
+  video?: string;
+  gradient: string;
+};
+
+const projects: Project[] = [
   {
     title: "Website quản lý hoạt động rèn luyện sinh viên",
     description:
-      "Dự án đồ án chuyên ngành và nghiên cứu khoa học về quản lý hoạt động rèn luyện, tập trung vào quy trình, dữ liệu và trải nghiệm người dùng.",
-    tags: ["Web App", "Nghiên cứu", "Quản lý"],
+      "Hệ thống số hóa quy trình đăng ký, điểm danh và tính điểm rèn luyện theo vai trò. Sản phẩm dùng React, Node.js/Express, PostgreSQL và Prisma; hỗ trợ QR, nhận diện khuôn mặt RetinaFace–ArcFace, WebAuthn và triển khai Docker trên VPS.",
+    tags: ["React", "Node.js", "PostgreSQL", "Computer Vision"],
     href: "https://nckh.hoatdongrenluyen.io.vn/login",
+    primaryLabel: "Xem website",
     repo: "https://github.com/Jiipi/NCKH2026_QLVTGCHDRL_SinhVien.git",
     gradient: "from-violet-500 to-fuchsia-500",
   },
   {
     title: "Lumio - Ứng dụng học tiếng Anh với AI",
     description:
-      "Nền tảng học tiếng Anh hỗ trợ AI cho người học Việt Nam, có đăng nhập Google/Facebook/email, đăng ký tài khoản và khôi phục mật khẩu.",
-    tags: ["AI Learning", "English App", "Authentication", "Web App"],
+      "Nền tảng học tiếng Anh tích hợp Gemini AI cho luyện nói, viết, đọc hiểu và phản hồi tức thì; quản lý từ vựng bằng SRS. Kiến trúc Next.js 16, Supabase PostgreSQL 19 bảng, RLS, Redis và xác thực email/OAuth.",
+    tags: ["Next.js", "Gemini AI", "Supabase", "SRS"],
     href: "https://lumio.nguyenhoangnamkhanh.id.vn/",
+    primaryLabel: "Xem website",
     repo: "https://github.com/NamKhanhCTK46B/lumio_app.git",
     gradient: "from-cyan-500 to-blue-500",
+  },
+  {
+    title: "Trò chơi Caro với AI",
+    description:
+      "Ứng dụng desktop JavaFX với bàn cờ Gomoku 15×15, chế độ người đấu máy ở 3 cấp độ từ Random, Heuristic đến Minimax có cắt tỉa Alpha–Beta. Kiến trúc MVC áp dụng Strategy, Observer và Memento để hỗ trợ Undo/Redo.",
+    tags: ["Java 23", "JavaFX", "Minimax", "Design Patterns"],
+    href: "/videos/caro-game-demo.mp4",
+    primaryLabel: "Xem video",
+    repo: "https://github.com/NamKhanhCTK46B/Caro-Game.git",
+    video: "/videos/caro-game-demo.mp4",
+    gradient: "from-rose-500 to-orange-500",
+  },
+  {
+    title: "Ứng dụng sắp xếp lịch làm việc",
+    description:
+      "Ứng dụng desktop tự động xếp ca sáng, chiều, tối cho nhân viên nhà hàng bằng thuật toán Greedy, cân bằng số ca và hạn chế trùng lịch. Hệ thống quản lý nhân viên, lịch làm, nghỉ phép và yêu cầu đổi ca trên SQL Server.",
+    tags: ["Java", "JavaFX", "SQL Server", "Greedy"],
+    href: "/videos/video-demo-ud-sx-lich-lam-viec.mp4",
+    primaryLabel: "Xem video",
+    repo: "https://github.com/NamKhanhCTK46B/ung-dung-sx-lich-lam-viec.git",
+    video: "/videos/video-demo-ud-sx-lich-lam-viec.mp4",
+    gradient: "from-indigo-500 to-cyan-500",
+  },
+  {
+    title: "Mô hình phân loại tin tức tiếng Việt",
+    description:
+      "Pipeline NLP thu thập đa luồng từ 15 báo điện tử, làm sạch và khử trùng 225.731 bài thuộc 11 chủ đề. Mô hình PhoBERT-base kết hợp sliding window, R-Drop và label smoothing đạt Accuracy 90,10%, được minh họa bằng ứng dụng Streamlit.",
+    tags: ["PhoBERT", "NLP", "Python", "Streamlit"],
+    href: "https://drive.google.com/drive/folders/1HDO9zM_EWhAqSIprSrN59PrAWFqwtkSt?usp=drive_link",
+    primaryLabel: "Xem trên Drive",
+    gradient: "from-blue-500 to-violet-500",
   },
   {
     title: "Website quán cafe",
@@ -46,6 +90,7 @@ const projects = [
       "Website được phát triển cho môn học ứng dụng mã nguồn mở, thể hiện khả năng làm giao diện, trình bày nội dung và tổ chức thông tin.",
     tags: ["WordPress", "UI", "Môn học"],
     href: "https://nificafe.rf.gd/",
+    primaryLabel: "Xem website",
     repo: "https://github.com/NamKhanhCTK46B/NifiCafe.git",
     gradient: "from-amber-500 to-orange-500",
   },
@@ -55,6 +100,7 @@ const projects = [
       "Trang giới thiệu hồ sơ cá nhân, học vấn, kỹ năng và các dự án nổi bật, tối ưu cho ứng tuyển thực tập.",
     tags: ["Portfolio", "Next.js", "Vercel"],
     href: "https://portfolio.nguyenhoangnamkhanh.id.vn/",
+    primaryLabel: "Xem website",
     repo: "https://github.com/NamKhanhCTK46B/portfolio.git",
     gradient: "from-emerald-500 to-teal-500",
   },
@@ -63,7 +109,7 @@ const projects = [
 const metrics = [
   { value: "3.4", label: "GPA", icon: "🎓" },
   { value: "985", label: "TOEIC", icon: "🌍" },
-  { value: "4", label: "Dự án", icon: "🚀" },
+  { value: "7", label: "Dự án", icon: "🚀" },
 ];
 
 const contactInfo = [
@@ -320,7 +366,7 @@ export default function HomePage() {
               </h2>
               <p style={{ maxWidth: "48rem", fontSize: "1rem", lineHeight: 2, color: "var(--text-muted)", marginTop: "1.25rem" }}>
                 Tôi quan tâm đến việc xây dựng giao diện sạch, có cấu trúc tốt, và học cách phối hợp giữa thiết kế, phát triển và yêu cầu nghiệp vụ.
-                Các dự án trong CV của tôi tập trung vào ứng dụng web thực tế như quản lý hoạt động rèn luyện, website dịch vụ và portfolio cá nhân.
+                Các dự án của tôi trải rộng từ ứng dụng web, phần mềm desktop đến AI/NLP, tập trung vào bài toán thực tế, kiến trúc rõ ràng và trải nghiệm người dùng.
               </p>
               <div className="grid gap-4 mt-8 sm:grid-cols-3">
                 {aboutCards.map((card) => (
@@ -397,13 +443,25 @@ export default function HomePage() {
             <div className="fade-up" style={{ maxWidth: "40rem" }}>
               <p className="gradient-text" style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.28em", margin: 0 }}>Dự án</p>
               <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, letterSpacing: "-0.015em", color: "var(--text-primary)", marginTop: "1rem" }}>
-                Bốn dự án tiêu biểu thể hiện khả năng học và triển khai.
+                Bảy dự án từ web, desktop đến AI thể hiện khả năng học và triển khai.
               </h2>
             </div>
 
             <div className="grid gap-6 mt-12 sm:grid-cols-2">
               {projects.map((project) => (
                 <article key={project.title} className="project-card fade-up">
+                  {project.video && (
+                    <video
+                      className="project-video"
+                      controls
+                      preload="metadata"
+                      playsInline
+                      aria-label={`Video demo ${project.title}`}
+                    >
+                      <source src={project.video} type="video/mp4" />
+                      Trình duyệt của bạn không hỗ trợ phát video.
+                    </video>
+                  )}
                   <a href={project.href} target="_blank" rel="noreferrer" style={{ textDecoration: "none", display: "inline-block" }}>
                     <div
                       className={`bg-gradient-to-br ${project.gradient} project-icon`}
@@ -437,11 +495,13 @@ export default function HomePage() {
                   </div>
                   <div className="project-actions flex gap-3 mt-6">
                     <a href={project.href} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: "0.625rem 1.25rem", fontSize: "0.8125rem", textDecoration: "none" }}>
-                      Demo ↗
+                      {project.primaryLabel} ↗
                     </a>
-                    <a href={project.repo} target="_blank" rel="noreferrer" className="btn-secondary" style={{ padding: "0.625rem 1.25rem", fontSize: "0.8125rem" }}>
-                      GitHub
-                    </a>
+                    {project.repo && (
+                      <a href={project.repo} target="_blank" rel="noreferrer" className="btn-secondary" style={{ padding: "0.625rem 1.25rem", fontSize: "0.8125rem" }}>
+                        GitHub
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}

@@ -29,6 +29,13 @@ type Project = {
   primaryLabel: string;
   repo?: string;
   video?: string;
+  logo?: string;
+  demoAccounts?: {
+    role: string;
+    username: string;
+    password: string;
+    email: string;
+  }[];
   gradient: string;
 };
 
@@ -87,11 +94,18 @@ const projects: Project[] = [
   {
     title: "Website quán cafe",
     description:
-      "Website được phát triển cho môn học ứng dụng mã nguồn mở, thể hiện khả năng làm giao diện, trình bày nội dung và tổ chức thông tin.",
-    tags: ["WordPress", "UI", "Môn học"],
-    href: "https://nificafe.rf.gd/",
+      "Website quản lý và đặt bàn cho quán cà phê, xây dựng bằng WordPress 6, PHP 8 và MySQL/MariaDB với child theme tùy chỉnh trên Astra. Hệ thống hỗ trợ menu đồ uống theo danh mục, kiểm tra trùng lịch khi đặt bàn, quản lý hồ sơ và phân quyền 4 cấp; nhân viên có thể quản trị trực tiếp trên frontend.",
+    tags: ["WordPress", "PHP", "MySQL", "3-layer Architecture"],
+    href: "https://nificafe.rf.gd/?i=1",
     primaryLabel: "Xem website",
     repo: "https://github.com/NamKhanhCTK46B/NifiCafe.git",
+    logo: "/images/nificafe-logo.png",
+    demoAccounts: [
+      { role: "Quản trị viên", username: "admin", password: "Admin@123456", email: "admin@example.com" },
+      { role: "Quản lý quán", username: "manager01", password: "Manager@123", email: "Manager@123" },
+      { role: "Nhân viên", username: "staff01", password: "Staff@123", email: "staff01@example.com" },
+      { role: "Khách hàng", username: "customer01", password: "Customer@123", email: "customer01@example.com" },
+    ],
     gradient: "from-amber-500 to-orange-500",
   },
   {
@@ -462,18 +476,27 @@ export default function HomePage() {
                       Trình duyệt của bạn không hỗ trợ phát video.
                     </video>
                   )}
-                  <a href={project.href} target="_blank" rel="noreferrer" style={{ textDecoration: "none", display: "inline-block" }}>
-                    <div
-                      className={`bg-gradient-to-br ${project.gradient} project-icon`}
-                      style={{
-                        width: "3.5rem", height: "3.5rem", borderRadius: "1rem",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        fontSize: "1.25rem", fontWeight: 700, color: "#fff",
-                        boxShadow: "0 8px 24px var(--glass-shadow)",
-                      }}
-                    >
-                      {project.title.slice(0, 1)}
-                    </div>
+                  <a href={project.href} target="_blank" rel="noreferrer" className="project-logo-link">
+                    {project.logo ? (
+                      <img
+                        src={project.logo}
+                        alt={`Logo ${project.title}`}
+                        className="project-logo project-icon"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div
+                        className={`bg-gradient-to-br ${project.gradient} project-icon`}
+                        style={{
+                          width: "3.5rem", height: "3.5rem", borderRadius: "1rem",
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                          fontSize: "1.25rem", fontWeight: 700, color: "#fff",
+                          boxShadow: "0 8px 24px var(--glass-shadow)",
+                        }}
+                      >
+                        {project.title.slice(0, 1)}
+                      </div>
+                    )}
                   </a>
                   <h3 style={{ fontSize: "1.125rem", fontWeight: 700, marginTop: "1.25rem" }}>
                     <a
@@ -493,6 +516,21 @@ export default function HomePage() {
                       <span key={tag} className="tag-chip">{tag}</span>
                     ))}
                   </div>
+                  {project.demoAccounts && (
+                    <details className="demo-credentials">
+                      <summary>Tài khoản trải nghiệm ({project.demoAccounts.length} vai trò)</summary>
+                      <div className="demo-account-list">
+                        {project.demoAccounts.map((account) => (
+                          <div key={account.role} className="demo-account">
+                            <strong>{account.role}</strong>
+                            <span><b>Username:</b> <code>{account.username}</code></span>
+                            <span><b>Mật khẩu:</b> <code>{account.password}</code></span>
+                            <span><b>Email:</b> <code>{account.email}</code></span>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  )}
                   <div className="project-actions flex gap-3 mt-6">
                     <a href={project.href} target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: "0.625rem 1.25rem", fontSize: "0.8125rem", textDecoration: "none" }}>
                       {project.primaryLabel} ↗

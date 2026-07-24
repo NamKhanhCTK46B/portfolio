@@ -7,6 +7,11 @@ export const metadata: Metadata = {
     "Portfolio của Nguyễn Hoàng Nam Khánh, sinh viên Kỹ thuật phần mềm – Trường Đại học Đà Lạt, đang tìm cơ hội thực tập phát triển web.",
   keywords: ["portfolio", "thực tập", "web developer", "Nguyễn Hoàng Nam Khánh", "Đại học Đà Lạt", "Kỹ thuật phần mềm"],
   authors: [{ name: "Nguyễn Hoàng Nam Khánh" }],
+  icons: {
+    icon: [{ url: "/images/portfolio-logo.png", type: "image/png", sizes: "256x256" }],
+    shortcut: "/images/portfolio-logo.png",
+    apple: "/images/portfolio-logo.png",
+  },
   openGraph: {
     title: "Nguyễn Hoàng Nam Khánh | Portfolio",
     description: "Sinh viên KTPM – Trường Đại học Đà Lạt, tập trung phát triển web với React/Next.js.",

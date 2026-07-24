@@ -48,6 +48,7 @@ const projects: Project[] = [
     href: "https://nckh.hoatdongrenluyen.io.vn/login",
     primaryLabel: "Xem website",
     repo: "https://github.com/Jiipi/NCKH2026_QLVTGCHDRL_SinhVien.git",
+    logo: "/images/projects/ren-luyen-logo-custom.png",
     gradient: "from-violet-500 to-fuchsia-500",
   },
   {
@@ -58,6 +59,7 @@ const projects: Project[] = [
     href: "https://lumio.nguyenhoangnamkhanh.id.vn/",
     primaryLabel: "Xem website",
     repo: "https://github.com/NamKhanhCTK46B/lumio_app.git",
+    logo: "/images/projects/lumio-logo.svg",
     gradient: "from-cyan-500 to-blue-500",
   },
   {
@@ -69,6 +71,7 @@ const projects: Project[] = [
     primaryLabel: "Xem video",
     repo: "https://github.com/NamKhanhCTK46B/Caro-Game.git",
     video: "/videos/caro-game-demo.mp4",
+    logo: "/images/projects/caro-logo.png",
     gradient: "from-rose-500 to-orange-500",
   },
   {
@@ -80,6 +83,7 @@ const projects: Project[] = [
     primaryLabel: "Xem video",
     repo: "https://github.com/NamKhanhCTK46B/ung-dung-sx-lich-lam-viec.git",
     video: "/videos/video-demo-ud-sx-lich-lam-viec.mp4",
+    logo: "/images/projects/schedule-logo.svg",
     gradient: "from-indigo-500 to-cyan-500",
   },
   {
@@ -89,6 +93,7 @@ const projects: Project[] = [
     tags: ["PhoBERT", "NLP", "Python", "Streamlit"],
     href: "https://drive.google.com/drive/folders/1HDO9zM_EWhAqSIprSrN59PrAWFqwtkSt?usp=drive_link",
     primaryLabel: "Xem trên Drive",
+    logo: "/images/projects/news-ai-logo.png",
     gradient: "from-blue-500 to-violet-500",
   },
   {
@@ -101,7 +106,6 @@ const projects: Project[] = [
     repo: "https://github.com/NamKhanhCTK46B/NifiCafe.git",
     logo: "/images/nificafe-logo.png",
     demoAccounts: [
-      { role: "Quản trị viên", username: "admin", password: "Admin@123456", email: "admin@example.com" },
       { role: "Quản lý quán", username: "manager01", password: "Manager@123", email: "Manager@123" },
       { role: "Nhân viên", username: "staff01", password: "Staff@123", email: "staff01@example.com" },
       { role: "Khách hàng", username: "customer01", password: "Customer@123", email: "customer01@example.com" },
@@ -116,6 +120,7 @@ const projects: Project[] = [
     href: "https://portfolio.nguyenhoangnamkhanh.id.vn/",
     primaryLabel: "Xem website",
     repo: "https://github.com/NamKhanhCTK46B/portfolio.git",
+    logo: "/images/portfolio-logo.png",
     gradient: "from-emerald-500 to-teal-500",
   },
 ];
